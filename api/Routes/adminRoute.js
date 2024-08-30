@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import authenticate from '../Middleware/auth.js';
+import { stringify } from 'jade/lib/utils.js';
 
 const router = Router();
 dotenv.config();
@@ -277,9 +278,9 @@ router.get('/buyCart', authenticate, async (req, res) => {
         
         book.set(BookName,data);
     })
-   
+    
     console.log(total);
-    res.status(200).send(total);
+    res.send(total.toString())
 }
     catch{
         res.status(500).json({message:"Check Details"});
