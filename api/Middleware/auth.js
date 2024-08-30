@@ -33,6 +33,7 @@ const authenticate=async (req,res,next)=>{
         console.log(verified.UserRole);
         
         req.user = verified.UserRole;
+        req.name = verified.UserName;
         next();
       } catch (error) {
         res.status(400).json({ message: 'Invalid Token' });

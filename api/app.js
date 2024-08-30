@@ -1,6 +1,7 @@
 import express,{json} from "express";
 import dotenv from "dotenv";
 import adminRoute from "./Routes/adminRoute.js";
+import userroute from "./Routes/userRoute.js";
 import bcrypt from 'bcrypt';
 import morgan from 'morgan';
 
@@ -14,6 +15,7 @@ app.use(json());
 app.use(morgan())
 // app.use(express.urlencoded({ extended: true }));
 app.use('/',adminRoute);
+app.use('/user',userroute)
 
 
 
