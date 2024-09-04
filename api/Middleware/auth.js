@@ -16,7 +16,7 @@ const extractToken = (cookieString, tokenName) => {
 };
 
 
-const authenticate=async (req,res,next)=>{
+const authenticate=async(req,res,next)=>{
     
     const value=req.headers.cookie ;
     const token = extractToken(value,"authToken");
